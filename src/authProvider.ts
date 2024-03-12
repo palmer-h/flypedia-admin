@@ -2,7 +2,7 @@ import type { AuthProvider } from 'react-admin';
 
 const authProvider: AuthProvider = {
   login: async ({ username, password }) => {
-    const request = new Request('http://localhost:3000/api/v1/auth/authenticate', {
+    const request = new Request(`${import.meta.env.VITE_API_URL}/auth/authenticate`, {
       method: 'POST',
       body: JSON.stringify({ email: username, password }),
       headers: new Headers({ 'Content-Type': 'application/json' }),
