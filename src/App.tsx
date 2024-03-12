@@ -19,7 +19,13 @@ import FlyTypeCreate from './flyTypes/FlyTypeCreate';
 import ImitateeCreate from './imitatees/ImitateeCreate';
 import FlyCreate from './flies/FlyCreate';
 
-const dataProvider: DataProvider = flypediaApiDataProvider('http://localhost:3000/api/v1');
+const apiUrl: string | undefined = import.meta.env.VITE_API_URL;
+
+if (!apiUrl) {
+  throw new Error('API URL environment variable is not set');
+}
+
+const dataProvider: DataProvider = flypediaApiDataProvider(apiUrl);
 
 export const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider} theme={defaultDarkTheme}>
