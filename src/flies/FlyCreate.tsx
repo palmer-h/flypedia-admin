@@ -3,13 +3,13 @@ import { SimpleForm, TextInput, ReferenceArrayInput, Create, required, SelectArr
 const FlyCreate = () => (
   <Create title="Create Fly">
     <SimpleForm>
-      <TextInput source="name" validate={[required()]} />
-      <TextInput source="description" validate={[required()]} />
+      <TextInput source="name" validate={[required()]} fullWidth />
+      <TextInput source="description" validate={[required()]} fullWidth />
       <ReferenceArrayInput source="types" reference="fly-types">
-        <SelectArrayInput />
+        <SelectArrayInput validate={[required()]} fullWidth />
       </ReferenceArrayInput>
       <ReferenceArrayInput source="imitatees" reference="imitatees">
-        <SelectArrayInput />
+        <SelectArrayInput validate={[required()]} fullWidth />
       </ReferenceArrayInput>
     </SimpleForm>
   </Create>
