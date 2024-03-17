@@ -43,7 +43,7 @@ export default (
       const { json } = await httpClient(url);
       return ({ data: json.results });
     },
-    getManyReference: async (resource, params) => {
+    getManyReference: async (resource, params) => {q
       const { page, perPage } = params.pagination;
       const { field, order } = params.sort;
 

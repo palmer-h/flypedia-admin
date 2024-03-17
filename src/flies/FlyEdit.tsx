@@ -15,10 +15,10 @@ const FlyEdit = () => {
       <SimpleForm>
         <TextInput source="name" validate={[required()]} fullWidth />
         <TextInput source="description" validate={[required()]} fullWidth />
-        <ReferenceArrayInput source="types" reference="fly-types">
+        <ReferenceArrayInput source="types" reference="fly-types" perPage={Infinity}>
           <SelectArrayInput format={formatArrayInputValue} validate={[required()]} fullWidth />
         </ReferenceArrayInput>
-        <ReferenceArrayInput source="imitatees" reference="imitatees">
+        <ReferenceArrayInput source="imitatees" reference="imitatees" perPage={Infinity}>
           <SelectArrayInput format={formatArrayInputValue} validate={[required()]} fullWidth />
         </ReferenceArrayInput>
         <TextInput source="id" fullWidth disabled />
